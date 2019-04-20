@@ -4,6 +4,10 @@
 # thoschmiphotos-wallpaper
 Little utility to scrape an image from thoschmiphotos blog and set it as desktop wallpaper.
 
+## Usage
+
+[download latest release](https://github.com/asc8277/thoschmiphotos-wallpaper/releases/latest) and run it
+
 ## License
 
 Licensed under MIT license
