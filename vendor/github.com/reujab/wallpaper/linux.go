@@ -79,7 +79,7 @@ func Get() (string, error) {
 // SetFromFile sets wallpaper from a file path.
 func SetFromFile(file string) error {
 	if isGNOMECompliant() {
-		return exec.Command("gsettings", "set", "org.gnome.desktop.background", "picture-uri", strconv.Quote("file://"+file)).Run()
+		return exec.Command("/bin/sh", "-c", "gsettings set org.gnome.desktop.screensaver picture-uri" + strconv.Quote("file://"+file) + "; gsettings set org.gnome.desktop.background picture-uri" + strconv.Quote("file://"+file)).Run()
 	}
 
 	switch Desktop {
@@ -110,7 +110,7 @@ func SetFromURL(url string) error {
 	switch Desktop {
 	// only some GNOME-based desktops support urls for picture-uri
 	case "GNOME", "ubuntu:GNOME":
-		return exec.Command("gsettings", "set", "org.gnome.desktop.background", "picture-uri", strconv.Quote(url)).Run()
+		return exec.Command("/bin/sh", "-c", "gsettings set org.gnome.desktop.screensaver picture-uri" + strconv.Quote(url) + "; gsettings set org.gnome.desktop.background picture-uri" + strconv.Quote(url)).Run()
 	case "i3":
 		return exec.Command("feh", "--bg-fill", url).Run()
 	default:
