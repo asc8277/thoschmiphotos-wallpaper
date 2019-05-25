@@ -11,10 +11,10 @@ clean:
 	rm -rf $(BINARY_NAME)*
 
 build: clean test
-	$(GOBUILD) -o $(BINARY_NAME) -v $(SOURCE_NAME)
+	GO111MODULE=on $(GOBUILD) -o $(BINARY_NAME) -v $(SOURCE_NAME)
 
 test: clean
-	$(GOTEST) -v
+	GO111MODULE=on $(GOTEST) -v
 
 build-all: clean test
 	GO111MODULE=on GOOS=linux GOARCH=386 $(GOBUILD) -o $(BINARY_NAME)-linux-x86 -v $(SOURCE_NAME)
