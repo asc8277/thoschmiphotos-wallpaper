@@ -1,10 +1,13 @@
-package main
+package tpw
 
-import "fmt"
-import "strings"
-import "github.com/mmcdole/gofeed"
-import "github.com/PuerkitoBio/goquery"
-import "github.com/asc8277/wallpaper"
+import (
+	"fmt"
+	"strings"
+
+	"github.com/PuerkitoBio/goquery"
+	"github.com/asc8277/wallpaper"
+	"github.com/mmcdole/gofeed"
+)
 
 func main() {
 	feed, _ := gofeed.NewParser().ParseURL("http://thoschmiphotos.blogspot.com/feeds/posts/default?alt=rss")
