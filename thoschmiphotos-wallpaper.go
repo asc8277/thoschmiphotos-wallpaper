@@ -1,4 +1,4 @@
-package tpw
+package main
 
 import (
 	"fmt"
