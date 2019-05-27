@@ -1,5 +1,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
 [![Build Status](https://travis-ci.org/asc8277/thoschmiphotos-wallpaper.svg?branch=master)](https://travis-ci.org/asc8277/thoschmiphotos-wallpaper) 
+[![GitHub release](https://img.shields.io/github/release/asc8277/thoschmiphotos-wallpaper.svg)](https://github.com/asc8277/thoschmiphotos-wallpaper/releases/)
+
 
 # thoschmiphotos-wallpaper
 Little utility to scrape an image from thoschmiphotos blog and set it as desktop wallpaper.
