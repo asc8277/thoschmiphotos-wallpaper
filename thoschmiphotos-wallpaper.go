@@ -1,22 +1,34 @@
 package main
 
 import (
-	"fmt"
+	"log"
 	"strings"
 
 	"github.com/PuerkitoBio/goquery"
-	"github.com/asc8277/wallpaper"
 	"github.com/mmcdole/gofeed"
+	"github.com/reujab/wallpaper"
 )
 
 func main() {
-	feed, _ := gofeed.NewParser().ParseURL("http://thoschmiphotos.blogspot.com/feeds/posts/default?alt=rss")
-	content := feed.Items[0].Description
-	fmt.Println(content)
+	feed, err := gofeed.NewParser().ParseURL("http://thoschmiphotos.blogspot.com/feeds/posts/default?alt=rss")
+	if err != nil {
+		log.Fatal(err)
+	}
 
-	doc, _ := goquery.NewDocumentFromReader(strings.NewReader(content))
-	url, _ := doc.Find("a:has(img)").Attr("href")
-	fmt.Println(url)
+	content := feed.Items[0].Description
+	log.Print(content)
+
+	doc, err := goquery.NewDocumentFromReader(strings.NewReader(content))
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	url, exists := doc.Find("a:has(img)").Attr("href")
+	if !exists {
+		log.Fatal("could not find image link")
+		return
+	}
+	log.Print(url)
 
 	wallpaper.SetFromURL(url)
 }
