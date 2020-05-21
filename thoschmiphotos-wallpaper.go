@@ -1,7 +1,9 @@
 package main
 
 import (
+	"fmt"
 	"log"
+	"os"
 	"strings"
 
 	"github.com/PuerkitoBio/goquery"
@@ -9,7 +11,14 @@ import (
 	"github.com/reujab/wallpaper"
 )
 
+var Version = "dev"
+
 func main() {
+	if len(os.Args) > 1 && os.Args[1] == "--version" {
+		fmt.Println(version())
+		return
+	}
+
 	feed, err := gofeed.NewParser().ParseURL("http://thoschmiphotos.blogspot.com/feeds/posts/default?alt=rss")
 	if err != nil {
 		log.Fatal(err)
@@ -31,4 +40,8 @@ func main() {
 	log.Print(url)
 
 	wallpaper.SetFromURL(url)
+}
+
+func version() string {
+	return fmt.Sprintf("thoschmiphotos-wallpaper %s", Version)
 }
