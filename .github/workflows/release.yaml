@@ -17,6 +17,6 @@ jobs:
       - name: create release
         uses: softprops/action-gh-release@v1
         with:
-          files: dist/media-archiver*
+          files: dist/thoschmiphotos-wallpaper*
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
