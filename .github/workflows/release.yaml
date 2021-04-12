@@ -11,7 +11,7 @@ jobs:
       - name: checkout
         uses: actions/checkout@master
       - name: make
-        uses: cedrickring/golang-action@1.6.0
+        uses: cedrickring/golang-action@1.7.0
         env:
           GO111MODULE: "on"
       - name: create release
