@@ -1,6 +1,6 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
-[![Build Status](https://travis-ci.org/asc8277/thoschmiphotos-wallpaper.svg?branch=master)](https://travis-ci.org/asc8277/thoschmiphotos-wallpaper) 
 [![GitHub release](https://img.shields.io/github/release/asc8277/thoschmiphotos-wallpaper.svg)](https://github.com/asc8277/thoschmiphotos-wallpaper/releases/)
+![Build Status](https://github.com/asc8277/thoschmiphotos-wallpaper/actions/workflows/release.yaml/badge.svg)
 
 
 # thoschmiphotos-wallpaper
