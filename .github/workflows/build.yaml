@@ -11,9 +11,9 @@ jobs:
         uses: cedrickring/golang-action@1.7.0
         env:
           GO111MODULE: "on"
-      # - name: create release
-      #   uses: softprops/action-gh-release@v1
-      #   with:
-      #     files: dist/**/*
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: create release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: dist/**/*
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
