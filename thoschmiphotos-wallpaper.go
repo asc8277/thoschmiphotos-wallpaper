@@ -43,5 +43,5 @@ func main() {
 }
 
 func version() string {
-	return fmt.Sprintf("thoschmiphotos-wallpaper %s", Version)
+	return fmt.Sprintf("thoschmiphotos-wallpaper build %s", Version)
 }
