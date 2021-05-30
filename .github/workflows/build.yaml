@@ -3,7 +3,7 @@ on: workflow_dispatch
 jobs:
   build:
     name: build
-    runs-on: "ubuntu-latest"
+    runs-on: ubuntu-latest
     steps:
     - name: delete old releases
       uses: dev-drprasad/delete-older-releases@v0.2.0
@@ -17,13 +17,14 @@ jobs:
     - name: make
       uses: cedrickring/golang-action@1.7.0
       env:
-        GO111MODULE: "on"
+        GO111MODULE: on
       with:
         args: apt-get update && apt-get install zip -y && make
     - name: create release
-      uses: "marvinpinto/action-automatic-releases@latest"
+      uses: marvinpinto/action-automatic-releases@latest
       with:
-        repo_token: "${{ secrets.GITHUB_TOKEN }}"
+        repo_token: ${{ secrets.GITHUB_TOKEN }}
         automatic_release_tag: latest
+        prerelease: false
         title: latest
         files: dist/*
