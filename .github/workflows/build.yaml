@@ -19,7 +19,7 @@ jobs:
       env:
         GO111MODULE: "on"
       with:
-        args: apt install zip && make
+        args: apt-get update && apt-get install zip && make
     - name: create release
       uses: "marvinpinto/action-automatic-releases@latest"
       with:
