@@ -10,6 +10,8 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@master
+      - name: Install xmllint
+        run: sudo apt install zip
       - name: make
         uses: cedrickring/golang-action@1.7.0
         env:
