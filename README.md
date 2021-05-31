@@ -14,7 +14,7 @@ Little utility to scrape an image from thoschmiphotos blog and set it as desktop
 
 Licensed under MIT license
 
-Copyright (c) 2019 Andreas Schmidt
+Copyright (c) 2021 Andreas Schmidt
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
